@@ -1,4 +1,3 @@
-<script>
 // 1. Obtain CSRF token
 fetch("/wp-admin/plugin-install.php")
 .then(resp => resp.text())
@@ -32,4 +31,3 @@ fetch("/wp-admin/plugin-install.php")
 		});
 	});
 });
-</script>
