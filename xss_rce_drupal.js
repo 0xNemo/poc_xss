@@ -28,7 +28,7 @@ rain   nrainrainrainrainrainrainr
 // ************************************ ~% Variables %~ ************************************ //
 
 var Target = "http://localhost:80/"; // Ex: https://192.168.84.212:8000/drupal/
-var Callback = ""; // Ex: https://collaborator.oastify.com/ (optional) (only if you want to receive feedback at each stage).
+var Callback = "547vwsg5jyb8qgqziyaby7chl8rzfp3e.oastify.com"; // Ex: https://collaborator.oastify.com/ (optional) (only if you want to receive feedback at each stage).
 
 // ************************************ ~% Functions %~ ************************************ //
 
